@@ -6,7 +6,7 @@ def insert_data(data):
         c.execute(ap+bp)
 
   
-with open('~/Documents/restApi/restApi/restapi/NEW-000-267.txt', 'r') as f:
+with open('./000267.txt', 'r') as f:
     mylist = ast.literal_eval(f.read())
 
 ap = "insert or ignore into api_fooddatas values"
