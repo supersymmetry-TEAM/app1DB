@@ -1,6 +1,10 @@
 from rest_framework import serializers
-from .models import FoodDatas, KitoStandard
+from .models import FoodDatas, KitoStandard, NutData
 from users.models import User
+class RecomendSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FoodDatas
+        fields = ("PRDLST_NM",)
 
 class FoodSerializer(serializers.ModelSerializer):
 
@@ -9,7 +13,7 @@ class FoodSerializer(serializers.ModelSerializer):
     likes = serializers.SerializerMethodField()
     class Meta:
         model = FoodDatas
-        exclude = ()
+        fields = '__all__'
     def get_likes(self, obj):
         likes = User.objects.filter(favs__in=[obj]).count()
         return likes
@@ -17,16 +21,18 @@ class FoodSerializer(serializers.ModelSerializer):
     def get_is_fav(self, obj):
         request = self.context.get("request")
         if request:
-            user = request.user
-            if user.is_authenticated:
-                return obj in user.favs.all()
+            user = User.objects.get(pk=request.query_params.get('id'))
+            return obj in user.favs.all()
         return False
 
 class KitoSerializer(serializers.ModelSerializer):
     class Meta:
         model = KitoStandard
-        exclude = ()
+        fields = '__all__'
         
 
 
-
+class NutDataSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = NutData
+        fields = '__all__'

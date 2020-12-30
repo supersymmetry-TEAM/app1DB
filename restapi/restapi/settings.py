@@ -46,6 +46,9 @@ if not DEBUG:
 INSTALLED_APPS = [
     'corsheaders',
     'api.apps.ApiConfig',
+#    'board1.apps.Board1Config',
+#    'boardcomment.apps.BoardcommentConfig',
+#    'foodcomment.apps.FoodcommentConfig',
     'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -90,12 +93,24 @@ WSGI_APPLICATION = 'restapi.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'testDB',
+
+        'USER': 'kms',
+
+        'PASSWORD': 'j7678596',
+
+        'HOST': 'database-1.c7kfhrmkarwb.ap-northeast-2.rds.amazonaws.com',
+
+        'PORT': '5959',
+
     }
+
 }
 # CORS_ALLOWED_ORIGINS = [
 #     "exp://192.168.219.154:19000",

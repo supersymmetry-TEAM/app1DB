@@ -1,0 +1,37 @@
+
+
+Thu Oct 29 10:02:35 2020
+Command line: TestDisk
+
+TestDisk 7.0, Data Recovery Utility, April 2015
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 4.4.0-193-generic (#224-Ubuntu SMP Tue Oct 6 17:15:28 UTC 2020) x86_64
+Compiler: GCC 5.3
+ext2fs lib: 1.42.13, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.0
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/xvda - 53 GB / 50 GiB - CHS 6527 255 63, sector size=512
+
+Partition table type (auto): Intel
+Disk /dev/xvda - 53 GB / 50 GiB
+Partition table type: Intel
+New options :
+ Dump : No
+ Align partition: Yes
+ Expert mode : No
+Partition table type (auto): Intel
+Disk /dev/xvda - 53 GB / 50 GiB
+Partition table type: None
+Partition table type (auto): Intel
+Disk /dev/xvda - 53 GB / 50 GiB
+Partition table type: Intel
+
+Interface Advanced
+Geometry from i386 MBR: head=255 sector=63
+ 1 P Linux                    0  32 33  6285 128 51  100974592
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 51 GB / 48 GiB
+ 2 P Linux Swap            6285 128 52  6526 243 53    3878912
+     SWAP2 version 1, pagesize=4096, 1986 MB / 1894 MiB
+opendir(/vmlinuz.old) failed
+SIGHUP detected! TestDisk has been killed.
