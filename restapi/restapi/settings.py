@@ -12,17 +12,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6ks_wkqp_5b7c+2pwrzep+s((_g#t+xxtt1+o^gf^q3p#-uqos'
+SECRET_KEY = ''
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 CORS_ORIGIN_ALLOW_ALL = True
 ALLOWED_HOSTS = ['*']
@@ -46,9 +41,6 @@ if not DEBUG:
 INSTALLED_APPS = [
     'corsheaders',
     'api.apps.ApiConfig',
-#    'board1.apps.Board1Config',
-#    'boardcomment.apps.BoardcommentConfig',
-#    'foodcomment.apps.FoodcommentConfig',
     'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -97,32 +89,24 @@ DATABASES = {
 
     'default': {
 
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': '',
 
-        'NAME': 'testDB',
+        'NAME': '',
 
-        'USER': 'kms',
+        'USER': '',
 
-        'PASSWORD': 'j7678596',
+        'PASSWORD': '',
 
-        'HOST': 'database-1.c7kfhrmkarwb.ap-northeast-2.rds.amazonaws.com',
+        'HOST': '',
 
-        'PORT': '5959',
+        'PORT': '',
 
     }
 
 }
-# CORS_ALLOWED_ORIGINS = [
-#     "exp://192.168.219.154:19000",
-#     "http://localhost:19002",
-#     "http://192.168.219.154:19000",
-#     "http://192.168.219.154:19002",
-#     "http://192.168.219.154:19006",
 
-# ]
 CORS_ALLOW_ALL_ORIGINS = True
-# Password validation
-# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -140,8 +124,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -154,11 +136,10 @@ USE_L10N = True
 USE_TZ = True
 CORS_ALLOW_ALL_ORIGINS = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
+
 
 STATIC_URL = '/static/'
-# Auth
+
 
 AUTH_USER_MODEL = "users.User"
 
