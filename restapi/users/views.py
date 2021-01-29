@@ -93,6 +93,18 @@ class UsersViewSet(ModelViewSet):
             except FoodDatas.DoesNotExist:
                 pass
         return Response(status=status.HTTP_400_BAD_REQUEST)
+    
+    @action(detail=True, methods=["post"])
+    def change_password(self, request):
+        newpassword = request.data.get("newpassword")
+        userid = int(request.data.get("userid"))
+        try:
+            u = User.objects.get(pk=userid)
+            u.set_password(newpassword)
+            u.save()
+            return Response(status=status.HTTP_200_OK)
+        except ValueError:
+            return Response({"messege":"something wrong"})
 
 
 # class FavsView(APIView):
