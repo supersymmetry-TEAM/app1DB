@@ -94,7 +94,7 @@ class UsersViewSet(ModelViewSet):
                 pass
         return Response(status=status.HTTP_400_BAD_REQUEST)
     
-    @action(detail=True, methods=["post"])
+    @action(detail=False, methods=["post"])
     def change_password(self, request):
         newpassword = request.data.get("newpassword")
         userid = int(request.data.get("userid"))
